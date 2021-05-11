@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en" class="h-100">
+<html id="top" lang="en" class="h-100">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Milad Anaee">
     <title>Mitt CV </title>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
 
     
@@ -15,7 +15,25 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
     <style>
+#rightbox{
+                float:right;
+                background:blue;
+                width:25%;
+                height:280px;
+            }
+	.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -35,6 +53,11 @@
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
   </head>
+<div>
+<a id="goto" href="#top" style="position: fixed;bottom: 20px;right:20px" class="btn btn-outline-secondary hide" id="js-top">
+   <i class="bi bi-arrow-up-circle"></i>
+</a>
+</div>
   <body class="d-flex h-100 text-center text-white bg-dark">
     
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
@@ -42,8 +65,8 @@
     <div>
       <h3 class="float-md-start mb-0">My Cover</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link active" aria-current="page" href="#">Intro</a>
+        <a class="nav-link" href="#">Jobs</a>
         <a class="nav-link" href="#">Contact</a>
       </nav>
     </div>
@@ -52,18 +75,37 @@
   <main class="px-3">
 	<img src="https://www.akitravel.se/wp-content/uploads/2018/06/summer.jpg" style="border-radius: 50%; width:30%"/>
     <h1>Welcome to my cover letter</h1>
-    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+    <p class="lead">I have worked as a developer for a year and now changed to be working as a IT-support technician</p>
     <p class="lead">
       <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
     </p>
   </main>
+<main class="px-3">
+	<img src="https://www.akitravel.se/wp-content/uploads/2018/06/summer.jpg" style="border-radius: 50%; width:30%"/>
+    <h1>Welcome to my cover letter</h1>
+    <p class="lead">I have worked as a developer for a year and now changed to be working as a IT-support technician</p>
+    <p class="lead">
+      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
+    </p>
+  </main>
+
 
   <footer class="mt-auto text-white-50">
     <p>  <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
   </footer>
 </div>
 
+<script>
+$(window).scroll(function(){
+    if($(this).scrollTop() == 0){
+	$('#goto').removeClass('show').addClass('hide'); 
+}
+else if($(this).scrollTop() > 100){
+    $('#goto').removeClass('hide').addClass('show');
+}	
+});
 
+</script>
     
   </body>
 </html>
