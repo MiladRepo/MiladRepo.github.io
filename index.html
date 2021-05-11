@@ -18,12 +18,10 @@
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
     <style>
-#rightbox{
-                float:right;
-                background:blue;
-                width:25%;
-                height:280px;
-            }
+
+.h-100{
+	height: 0 !important;
+}
 	.show {
     visibility: visible;
     opacity: 1;
@@ -63,9 +61,9 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
-      <h3 class="float-md-start mb-0">My Cover</h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="#">Intro</a>
+      <a style="color:#fff;text-decoration:none" href="file://C:/Users/manaee/Downloads/cover/index.html"><h3 class="float-md-start mb-0">My Cover</h3></a>      
+<nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link active" aria-current="page" href="#about">Intro</a>
         <a class="nav-link" href="#">Jobs</a>
         <a class="nav-link" href="#">Contact</a>
       </nav>
@@ -73,29 +71,43 @@
   </header>
 
   <main class="px-3">
-	<img src="https://www.akitravel.se/wp-content/uploads/2018/06/summer.jpg" style="border-radius: 50%; width:30%"/>
-    <h1>Welcome to my cover letter</h1>
-    <p class="lead">I have worked as a developer for a year and now changed to be working as a IT-support technician</p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
+<br>
+<h2 id="about">A little about me</h2>
+<br>
+<div>
+	<img  src="https://www.akitravel.se/wp-content/uploads/2018/06/summer.jpg" style="border-radius: 50%; width:30%; height:auto"/>
+</div>
+<br>
+<h3>Milad Anaee</h3>
+<p class="lead">IT-support technician</p>
+    <p class="lead" style="background-color:#505050;padding:10px;">
+	I tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my life<br>
     </p>
-  </main>
-<main class="px-3">
-	<img src="https://www.akitravel.se/wp-content/uploads/2018/06/summer.jpg" style="border-radius: 50%; width:30%"/>
-    <h1>Welcome to my cover letter</h1>
-    <p class="lead">I have worked as a developer for a year and now changed to be working as a IT-support technician</p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
-    </p>
-  </main>
+<h2 id="contact">Contact me</h2>
+<form  class="lead" style="background-color:#505050;padding:10px;" action=”mailto:milad.anaee@gmail.com”
+method=”POST”
+enctype=”multipart/form-data”
+name=”EmailTestForm”>
+<br>
+<br>
 
+<br>
 
-  <footer class="mt-auto text-white-50">
-    <p>  <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
-  </footer>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<input type=”submit” value=”Submit”> 
+</form>
+
+  </main>
 </div>
 
 <script>
+//var startShow = $("#id")
+
 $(window).scroll(function(){
     if($(this).scrollTop() == 0){
 	$('#goto').removeClass('show').addClass('hide'); 
