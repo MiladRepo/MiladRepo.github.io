@@ -12,6 +12,7 @@
     
 
     <!-- Bootstrap core CSS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
@@ -64,55 +65,50 @@
       <a style="color:#fff;text-decoration:none" href="file://C:/Users/manaee/Downloads/cover/index.html"><h3 class="float-md-start mb-0">My Cover</h3></a>      
 <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link active" aria-current="page" href="#about">Intro</a>
-        <a class="nav-link" href="#">Jobs</a>
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="#jobs">Jobs</a>
+        <a class="nav-link" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="px-3">
 <br>
-<h2 id="about">A little about me</h2>
 <br>
 <div>
-	<img  src="https://www.akitravel.se/wp-content/uploads/2018/06/summer.jpg" style="border-radius: 50%; width:30%; height:auto"/>
+	<img src="https://www.akitravel.se/wp-content/uploads/2018/06/summer.jpg" style="background-image:url(https://ak.picdn.net/shutterstock/videos/8920366/thumb/2.jpg);border-radius: 50%; width:220px; height:auto"/>
 </div>
 <br>
 <h3>Milad Anaee</h3>
 <p class="lead">IT-support technician</p>
-    <p class="lead" style="background-color:#505050;padding:10px;">
+<br>
+    <div id="about" class="lead" style="background-color:#505050;padding:10px;">
+	<h3>A little about me</h3>
 	I tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my life<br>
-    </p>
-<h2 id="contact">Contact me</h2>
-<form  class="lead" style="background-color:#505050;padding:10px;" action=”mailto:milad.anaee@gmail.com”
-method=”POST”
-enctype=”multipart/form-data”
-name=”EmailTestForm”>
-<br>
-<br>
-
-<br>
-
-<br>
-
-<br>
-<br>
-<br>
-<br>
-<input type=”submit” value=”Submit”> 
-</form>
-
+    </div>
+<p></p>
+ <div id="jobs" class="lead" style="background-color:#505050;padding:10px;">
+	<h3>Things I've done</h3>
+	I tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my life<br>
+    </div>
+<p></p>
+<div id="contact" class="lead" style="margin-bottom:50px;word-wrap:break-word;background-color:#505050;padding:10px;">
+	<h3>Contact me</h3>
+	I tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my life
+</div>
   </main>
 </div>
 
 <script>
-//var startShow = $("#id")
+var startShow;
+$(document).ready(function(){
+startShow = ($(document).height() - $(window).height());
+});
 
 $(window).scroll(function(){
-    if($(this).scrollTop() == 0){
+    if($(this).scrollTop() < startShow /4){
 	$('#goto').removeClass('show').addClass('hide'); 
 }
-else if($(this).scrollTop() > 200){
+else if($(this).scrollTop() > startShow /2){
     $('#goto').removeClass('hide').addClass('show');
 }	
 });
