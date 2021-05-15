@@ -101,17 +101,27 @@
 	<h3>A little about me</h3>
 	I tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my life<br>
     </div>
-<p></p>
-<p id="dice" style="background-color: beige; padding:5px;text-align:left">
+<div style="width:auto">
+<div class="dice1" style="margin:20px;background-color: beige; padding:5px;text-align: left;">
 <a class="btn">
 <i style="font-size:30px" class="bi bi-bootstrap-reboot"></i>
 </a>
-</p>
+<i style="color:gray;font-size: 20px">
+</i>
+</div>
+</div>
  <div id="jobs" class="lead" style="background-color:#505050;padding:10px;">
 	<h3>Things I've done</h3>
 	I tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my life<br>
     </div>
 <p></p>
+<div class="dice2" style="margin:20px;background-color: beige; padding:5px;text-align:left">
+<a class="btn">
+<i style="font-size:30px;" class="bi bi-bootstrap-reboot"></i>
+</a>
+<i style="color:gray; font-size: 20px">
+</i>
+</div>
 <div id="contact" class="lead" style="margin-bottom:50px;word-wrap:break-word;background-color:#505050;padding:10px;">
 	<h3>Contact me</h3>
 	I tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my life
@@ -120,10 +130,15 @@
 </div>
 
 <script>
-var counter;
+var random;
+var answers = ["I am happy", "I like sports"];
+
 var startShow;
 $(document).ready(function(){
 startShow = ($(document).height() - $(window).height());
+random = Math.floor(Math.random() * 2);
+$('.dice1 a').siblings().last().text('- "' + answers[random] + '"');
+$('.dice2 a').siblings().last().text('- "' + answers[random] + '"');
 });
 
 $(window).scroll(function(){
@@ -145,12 +160,22 @@ $("nav .lang").click(function(){
 	
 });
 
-$('#dice a').click(function() {
+$('.dice1 a').click(function() {
+	random = Math.floor(Math.random() * 2);
 	$(this).addClass("rotate");
+	$(this).siblings().last().text('- "' + answers[random] + '"');
 	setTimeout(function(){
-  $('#dice a').removeClass("rotate");
+  $('.dice1 a').removeClass("rotate");
 }, 500);
+});
 
+$('.dice2 a').click(function() {
+	random = Math.floor(Math.random() * 2);
+	$(this).addClass("rotate");
+	$(this).siblings().last().text('- "' + answers[random] + '"');
+	setTimeout(function(){
+  $('.dice2 a').removeClass("rotate");
+}, 500);
 });
 
 </script>
