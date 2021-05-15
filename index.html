@@ -16,9 +16,23 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
     <style>
+.rotate {
+  animation: rotation 0.5s linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
 
 .h-100{
 	height: 0 !important;
@@ -52,21 +66,23 @@
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
   </head>
-<div>
-<a id="goto" href="#top" style="position: fixed;bottom: 20px;right:20px" class="btn btn-outline-secondary hide" id="js-top">
+  <body class="d-flex h-100 text-center text-white bg-dark">
+  <div>
+<a href="#top" style="position: fixed;bottom: 20px;right:20px" class="btn btn-outline-secondary goto hide" id="js-top">
    <i class="bi bi-arrow-up-circle"></i>
 </a>
 </div>
-  <body class="d-flex h-100 text-center text-white bg-dark">
-    
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
+<a style="color:#fff;text-decoration:none" href="file://C:/Users/manaee/Downloads/cover/index.html"><h3 class="float-md-start mb-0">My Cover</h3></a>  
     <div>
-      <a style="color:#fff;text-decoration:none" href="file://C:/Users/manaee/Downloads/cover/index.html"><h3 class="float-md-start mb-0">My Cover</h3></a>      
-<nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="#about">Intro</a>
-        <a class="nav-link" href="#jobs">Jobs</a>
-        <a class="nav-link" href="#contact">Contact</a>
+	<nav class="nav nav-masthead justify-content-center float-md-end">
+	<a href="file://C:/Users/manaee/Downloads/cover/index.html" class="nav-link lang active" aria-current="page"><b>SV</b></a> 
+	<a href="file://C:/Users/manaee/Downloads/cover/en.html" class="nav-link lang"><b>EN</b></a>
+	<span style="padding-left:10px;padding-right:10px;padding-top:4px"><b>|</b></span>
+	<a class="nav-link menu active" aria-current="page" href="#about">Intro</a>
+        <a class="nav-link menu" href="#jobs">Jobs</a>
+        <a class="nav-link menu" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -86,6 +102,11 @@
 	I tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my life<br>
     </div>
 <p></p>
+<p id="dice" style="background-color: beige; padding:5px;text-align:left">
+<a class="btn">
+<i style="font-size:30px" class="bi bi-bootstrap-reboot"></i>
+</a>
+</p>
  <div id="jobs" class="lead" style="background-color:#505050;padding:10px;">
 	<h3>Things I've done</h3>
 	I tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my life<br>
@@ -99,6 +120,7 @@
 </div>
 
 <script>
+var counter;
 var startShow;
 $(document).ready(function(){
 startShow = ($(document).height() - $(window).height());
@@ -106,11 +128,29 @@ startShow = ($(document).height() - $(window).height());
 
 $(window).scroll(function(){
     if($(this).scrollTop() < startShow /4){
-	$('#goto').removeClass('show').addClass('hide'); 
+	$('.goto').removeClass('show').addClass('hide'); 
 }
 else if($(this).scrollTop() > startShow /2){
-    $('#goto').removeClass('hide').addClass('show');
+    $('.goto').removeClass('hide').addClass('show');
 }	
+});
+
+$("nav .menu").click(function(){
+	$(this).addClass('active').siblings(".menu").removeClass('active');
+	
+});
+
+$("nav .lang").click(function(){
+	$(this).addClass('active').siblings(".lang").removeClass('active');
+	
+});
+
+$('#dice a').click(function() {
+	$(this).addClass("rotate");
+	setTimeout(function(){
+  $('#dice a').removeClass("rotate");
+}, 500);
+
 });
 
 </script>
