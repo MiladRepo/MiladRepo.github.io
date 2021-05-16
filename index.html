@@ -77,8 +77,8 @@
 <a style="color:#fff;text-decoration:none" href="file://C:/Users/manaee/Downloads/cover/index.html"><h3 class="float-md-start mb-0">My Cover</h3></a>  
     <div>
 	<nav class="nav nav-masthead justify-content-center float-md-end">
-	<a href="file://C:/Users/manaee/Downloads/cover/index.html" class="nav-link lang active" aria-current="page"><b>SV</b></a> 
-	<a href="file://C:/Users/manaee/Downloads/cover/en.html" class="nav-link lang"><b>EN</b></a>
+	<a href="/en" class="nav-link lang active" aria-current="page"><b>SV</b></a> 
+	<a href="https://miladrepo.github.io/en" class="nav-link lang"><b>EN</b></a>
 	<span style="padding-left:10px;padding-right:10px;padding-top:4px"><b>|</b></span>
 	<a class="nav-link menu active" aria-current="page" href="#about">Intro</a>
         <a class="nav-link menu" href="#jobs">Jobs</a>
@@ -99,20 +99,21 @@
 <br>
     <div id="about" class="lead" style="background-color:#505050;padding:10px;">
 	<h3>A little about me</h3>
-	I tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my life<br>
+	I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports
     </div>
-<div style="width:auto">
+<p>
+<h6 style="color: lightblue">Did you know <i class="bi bi-arrow-down"></i></h6>
+</p>
 <div class="dice1" style="margin:20px;background-color: beige; padding:5px;text-align: left;">
 <a class="btn">
-<i style="font-size:30px" class="bi bi-bootstrap-reboot"></i>
+<i style="font-size:30px" class="bi bi-arrow-repeat"></i>
 </a>
 <i style="color:gray;font-size: 20px">
 </i>
 </div>
-</div>
  <div id="jobs" class="lead" style="background-color:#505050;padding:10px;">
 	<h3>Things I've done</h3>
-	I tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my life<br>
+	I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports
     </div>
 <p></p>
 <div class="dice2" style="margin:20px;background-color: beige; padding:5px;text-align:left">
@@ -124,19 +125,19 @@
 </div>
 <div id="contact" class="lead" style="margin-bottom:50px;word-wrap:break-word;background-color:#505050;padding:10px;">
 	<h3>Contact me</h3>
-	I tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my lifeI tried to live my life
+	I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports
 </div>
   </main>
 </div>
 
 <script>
 var random;
-var answers = ["I am happy", "I like sports"];
+var answers = ["I am happy", "I like sports", "I live in stockholm"];
 
 var startShow;
 $(document).ready(function(){
 startShow = ($(document).height() - $(window).height());
-random = Math.floor(Math.random() * 2);
+random = Math.floor(Math.random() * 3);
 $('.dice1 a').siblings().last().text('- "' + answers[random] + '"');
 $('.dice2 a').siblings().last().text('- "' + answers[random] + '"');
 });
@@ -161,7 +162,7 @@ $("nav .lang").click(function(){
 });
 
 $('.dice1 a').click(function() {
-	random = Math.floor(Math.random() * 2);
+	random = Math.floor(Math.random() * 3);
 	$(this).addClass("rotate");
 	$(this).siblings().last().text('- "' + answers[random] + '"');
 	setTimeout(function(){
@@ -170,7 +171,7 @@ $('.dice1 a').click(function() {
 });
 
 $('.dice2 a').click(function() {
-	random = Math.floor(Math.random() * 2);
+	random = Math.floor(Math.random() * 3);
 	$(this).addClass("rotate");
 	$(this).siblings().last().text('- "' + answers[random] + '"');
 	setTimeout(function(){
