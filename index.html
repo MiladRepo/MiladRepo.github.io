@@ -113,31 +113,69 @@
 	<h3>Things I've done</h3>
 	I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports
     </div>
-<p></p>
-<div class="dice2" style="margin:20px;background-color: beige; padding:5px;text-align:left">
-<a class="btn">
-<i style="font-size:30px;" class="bi bi-bootstrap-reboot"></i>
-</a>
-<i style="color:gray; font-size: 20px">
-</i>
-</div>
-<div id="contact" class="lead" style="margin-bottom:50px;word-wrap:break-word;background-color:#505050;padding:10px;">
+<div id="contact" class="lead" style="margin-top:20px;margin-bottom:30px;word-wrap:break-word;background-color:#505050;padding:10px;">
 	<h3>Contact me</h3>
-	I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports
+<?php
+
+$errors = [];
+$errorMessage = '';
+
+if (!empty($_POST)) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    if (empty($name)) {
+        $errors[] = 'Name is empty';
+    }
+
+    if (empty($email)) {
+        $errors[] = 'Email is empty';
+    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = 'Email is invalid';
+    }
+
+    if (empty($message)) {
+        $errors[] = 'Message is empty';
+    }
+
+
+    if (empty($errors)) {
+        $toEmail = 'example@example.com';
+        $emailSubject = 'New email from your contant form';
+        $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html; charset=iso-8859-1'];
+
+        $bodyParagraphs = ["Name: {$name}", "Email: {$email}", "Message:", $message];
+        $body = join(PHP_EOL, $bodyParagraphs);
+
+        if (mail($toEmail, $emailSubject, $body, $headers)) {
+            header('Location: thank-you.html');
+        } else {
+            $errorMessage = 'Oops, something went wrong. Please try again later';
+        }
+    } else {
+        $allErrors = join('<br/>', $errors);
+        $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
+    }
+}
+
+?>
+</div>
+
+<div style="margin-bottom:40px;color:orange">
+<h4>Thank you for visiting my page</h4>
 </div>
   </main>
 </div>
 
 <script>
-var random;
 var answers = ["I am happy", "I like sports", "I live in stockholm"];
 
 var startShow;
 $(document).ready(function(){
 startShow = ($(document).height() - $(window).height());
 random = Math.floor(Math.random() * 3);
-$('.dice1 a').siblings().last().text('- "' + answers[random] + '"');
-$('.dice2 a').siblings().last().text('- "' + answers[random] + '"');
+$('.dice1 a').siblings().last().text('- "' + answers[getNumber()] + '"');
 });
 
 $(window).scroll(function(){
@@ -160,22 +198,24 @@ $("nav .lang").click(function(){
 });
 
 $('.dice1 a').click(function() {
-	random = Math.floor(Math.random() * 3);
 	$(this).addClass("rotate");
-	$(this).siblings().last().text('- "' + answers[random] + '"');
+	$(this).siblings().last().text('- "' + answers[getNumber()] + '"');
 	setTimeout(function(){
   $('.dice1 a').removeClass("rotate");
 }, 500);
 });
 
-$('.dice2 a').click(function() {
-	random = Math.floor(Math.random() * 3);
-	$(this).addClass("rotate");
-	$(this).siblings().last().text('- "' + answers[random] + '"');
-	setTimeout(function(){
-  $('.dice2 a').removeClass("rotate");
-}, 500);
-});
+function getNumber() {
+    var min = 0,
+        max = 3,
+        random;
+
+    do {
+        random = Math.floor(Math.random() * (max - min)) + min;
+    } while (random === getNumber.last);
+    getNumber.last = random;
+    return random;
+};
 
 </script>
     
