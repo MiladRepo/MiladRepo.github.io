@@ -115,51 +115,8 @@
     </div>
 <div id="contact" class="lead" style="margin-top:20px;margin-bottom:30px;word-wrap:break-word;background-color:#505050;padding:10px;">
 	<h3>Contact me</h3>
-<?php
-
-$errors = [];
-$errorMessage = '';
-
-if (!empty($_POST)) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
-
-    if (empty($name)) {
-        $errors[] = 'Name is empty';
-    }
-
-    if (empty($email)) {
-        $errors[] = 'Email is empty';
-    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = 'Email is invalid';
-    }
-
-    if (empty($message)) {
-        $errors[] = 'Message is empty';
-    }
-
-
-    if (empty($errors)) {
-        $toEmail = 'example@example.com';
-        $emailSubject = 'New email from your contant form';
-        $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html; charset=iso-8859-1'];
-
-        $bodyParagraphs = ["Name: {$name}", "Email: {$email}", "Message:", $message];
-        $body = join(PHP_EOL, $bodyParagraphs);
-
-        if (mail($toEmail, $emailSubject, $body, $headers)) {
-            header('Location: thank-you.html');
-        } else {
-            $errorMessage = 'Oops, something went wrong. Please try again later';
-        }
-    } else {
-        $allErrors = join('<br/>', $errors);
-        $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
-    }
-}
-
-?>
+If you would like to contact me regarding a Job opportunity so please send me an email and I'll be happy to look at it.
+<div style="margin-top:10px" ><a style="color:white" class="btn btn-success" href="mailto:milad.anaee@gmail.com">milad.anaee@gmail.com</a></div>
 </div>
 
 <div style="margin-bottom:40px;color:orange">
@@ -169,12 +126,11 @@ if (!empty($_POST)) {
 </div>
 
 <script>
-var answers = ["I am happy", "I like sports", "I live in stockholm"];
+var answers = ["I have worked as a web developer", "I like sports", "I live in stockholm"];
 
 var startShow;
 $(document).ready(function(){
 startShow = ($(document).height() - $(window).height());
-random = Math.floor(Math.random() * 3);
 $('.dice1 a').siblings().last().text('- "' + answers[getNumber()] + '"');
 });
 

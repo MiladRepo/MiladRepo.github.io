@@ -77,12 +77,12 @@
 <a style="color:#fff;text-decoration:none" href="file://C:/Users/manaee/Downloads/cover/index.html"><h3 class="float-md-start mb-0">My Cover</h3></a>  
     <div>
 	<nav class="nav nav-masthead justify-content-center float-md-end">
-	<a href="/" class="nav-link lang active" aria-current="page"><b>EN</b></a> 
-	<a href="/sv" class="nav-link lang"><b>SV</b></a>
+	<a href="/" class="nav-link lang"><b>EN</b></a> 
+	<a href="/sv" class="nav-link lang active" aria-current="page"><b>SV</b></a>
 	<span style="padding-left:10px;padding-right:10px;padding-top:4px"><b>|</b></span>
 	<a class="nav-link menu active" aria-current="page" href="#about">Intro</a>
-        <a class="nav-link menu" href="#jobs">Jobs</a>
-        <a class="nav-link menu" href="#contact">Contact</a>
+        <a class="nav-link menu" href="#jobs">Jobb</a>
+        <a class="nav-link menu" href="#contact">Kontakt</a>
       </nav>
     </div>
   </header>
@@ -115,7 +115,8 @@
     </div>
 <div id="contact" class="lead" style="margin-top:20px;margin-bottom:30px;word-wrap:break-word;background-color:#505050;padding:10px;">
 	<h3>Contact me</h3>
-	I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports I live in sweden and enjoy sports
+If you would like to contact me regarding a Job opportunity so please send me an email and I'll be happy to look at it.
+<div style="margin-top:10px" ><a style="color:white" class="btn btn-success" href="mailto:milad.anaee@gmail.com">milad.anaee@gmail.com</a></div>
 </div>
 
 <div style="margin-bottom:40px;color:orange">
@@ -125,15 +126,12 @@
 </div>
 
 <script>
-var random;
-var answers = ["I am happy", "I like sports", "I live in stockholm"];
+var answers = ["I have worked as a web developer", "I like sports", "I live in stockholm"];
 
 var startShow;
 $(document).ready(function(){
 startShow = ($(document).height() - $(window).height());
-random = Math.floor(Math.random() * 3);
-$('.dice1 a').siblings().last().text('- "' + answers[random] + '"');
-$('.dice2 a').siblings().last().text('- "' + answers[random] + '"');
+$('.dice1 a').siblings().last().text('- "' + answers[getNumber()] + '"');
 });
 
 $(window).scroll(function(){
@@ -150,10 +148,10 @@ $("nav .menu").click(function(){
 	
 });
 
-$("nav .lang").click(function(){
-	$(this).addClass('active').siblings(".lang").removeClass('active');
+//$("nav .lang").click(function(){
+//	$(this).addClass('active').siblings(".lang").removeClass('active');
 	
-});
+//});
 
 $('.dice1 a').click(function() {
 	$(this).addClass("rotate");
